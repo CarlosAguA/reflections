@@ -1,0 +1,49 @@
+
+LESSON 1
+
+1. How did viewing a diff between two versions of a file help you see the bug that was introduced?
+Solution for the problem I had : 
+https://www.youtube.com/watch?v=vERWpzH7PBM
+ANSWR=You can compare how the code "evolved" or was modified between 2 files (old and new version).Then, changes are easier to track.
+
+
+2. How could having easy access to the entire history of a file make you a more efficient programmer in the long term?
+ANSWR=In my experience:
+-Sometimes I try a piece of code to achieve a task in a program and if it works I write the nice code I desired but I delete the test code. -If I need the test code in the future, it will be helpful to go back and just check what the test code was.
+-Sometimes I can decide to change the layout of a program to a nicer one. But in the future I might want to try the previous one with a very basic features but not in the complete code that has the robust features. Like wanting to improve my digital stethoscope but just using startStopbutton. 
+-Being able to do things faster for completing tests of code will help me to be a more efficient programmer.
+
+Adding a README to the projects of Android would be a good ide to know what do they do. 
+
+3. What do you think are the pros and cons of manually choosing when to create a commit, like you do in Git, vs having versions automatically saved, like Google Docs does?
+ANSW= If I use a commit per logical change (typo, a fixed bug) it will good so that you can focus on relevant things in the code. If the thigs you changed for example in a working period of time of an hour, but what you did was really significant, you can commit it. 
+
+-So Finally, the pros are that if you use the logic of commiting specific times at specific moments there won´t be su much information to track if you commit everything. Sometimes you can forget to commit if you don´t identify what is meaningful for you. 
+
+4. Why do you think some version control systems, like Git, allow saving multiple files in one commit, while others, like Google Docs, treat each file separately?
+ANSW= Because for example, an Android project consists of different layout like tha java and xml files. The files are related eeach other and if one file changes, it will change or influence what is in the other files. In a google docs it wouldn´t be relevant since that structure is not used in a word processor but it is used in compilers and programming data.
+
+5. How can you use the commands git log and git diff to view the history of files?
+
+ANSW= You can use "git log" and "git diff" only when you have uploaded or cloned a repository from an url. 
+By the time you cloned a repository, you will be able to use the line "git log" so that you can see the commits of the project.
+After that, you have to choose 2 commits if you want to compare the changes. For that, you will be required to use the line "git diff" and then space and then the id of the  First_the_Old_commit space Second_the_new_commit
+After that you will see the changes in red and green. Don´t forget to press enter until you reach the end of all the blue blocks. Add up the red ones and yellow ones to get a number of changes. 
+
+6. How might using version control make you more confident to make changes that could break something?
+ANSW= Knowing thatI can go back on a repository where the files of my project are makes me feel more confident. 
+First, I just need to clone the repository wherever it is.
+Second, I have to use "git checkout" adding the commit ID where I know the project was working well.
+Third, I have to start using "git checkout" with the following commits one by one in order to check if thery are performing well. 
+Finally, by the time I can notice that something is wrong in the project, I can use "git diff" to compre the differences between the commits, the one that performs well, and the one that has the bug. 
+
+7. Now that you have your workspace set up, what do you want to try using Git for?
+ANSW= I would like to try Git for an Android app using Android Studio.
+
+Summary
+-Why saving all the versions of my project might be useful.
+-Some systems that help me do that, named version control systems.
+Particular system called git
+-Practiced how to use it reviewing the history of a complete project
+NExt lesson I will create my first git repository
+

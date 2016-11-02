@@ -1,0 +1,53 @@
+
+Command line
+subl lesson_1_reflections.txt 
+# launch sublime with file called lesson_1_reflections.txt
+
+11/01/2016
+LESSON 2
+
+1. What happens when you initialize a repository? Why do you need to do it?
+
+ANSW= When I initialize a repository a new file with a .git extension is created. The "git initialize" command is required. The user can not see this file at first instance. For viewing this file the command " ls -a" in the prompt is required in the directory where the repository is.
+The reason I need to create a repository is for tracking the changes of all the files within the repository. The name of the files won´t change but just the history (content of the files) in time. Provided that, I will be able to check the history. 
+
+2. How is the staging area different from the working directory and the repository? What value do you think it offers?
+
+ANSW= 
+The repository is where all the files of a project are together with the commmits you may have of your logic changes. The files should have been added before to the staging area for making the commit.
+
+The staging area is the area where the files of a project are added so that a commit can be made before adding it to a repository (.git)
+
+The working directory is just the file where all the files of the project are including the repository and individual files with any extension that are part of the project. You can not track the history in the files there by itself. Only in the created repository after sending the files to the staging area, creating a commit and maybe adding them to the repository. 
+
+
+Solved problems "git commit" execution
+1. 
+$ git commit
+
+*** Please tell me who you are.
+
+Run
+
+git config --global user.email "you@example.com"
+
+git config --global user.name "Your Name"
+
+to set your account's default identity.
+Omit --global to set the identity only in this repository.
+
+fatal: unable to auto-detect email address (got 'Obby@ObbyWorkstation.(none)')
+
+ANSW = git config --global user.email "you@example.com"
+
+git config --globa user.name "Carlos Aguilera"
+
+
+2.Git commit show error subl -n -w: subl: command not found error: There was a problem with the editor ‘subl -n -w’. Please supply the message using either -m or -F option
+
+ANSW= git config --global core.editor "'c:/program files/sublime text 2/sublime_text.exe' -w"
+
+For my computer = git config --globa core.editor "'C:\Program Files\Sublime Text 3\subl.exe' -w"
+
+https://discussions.udacity.com/t/git-commit-show-error-subl-n-w-subl-command-not-found-error-there-was-a-problem-with-the-editor-subl-n-w-please-supply-the-message-using-either-m-or-f-option/21751/5
+
