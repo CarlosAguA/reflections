@@ -5,3 +5,8 @@
 2. Why might you want to always pull changes manually rather than having Git automatically stay up-to-date with your remote      r    repository?
    Because you may just want to focus on what you are doing before getting new information that you may add either in a merged    branch or in the master branch.
  
+ 3. Describe the differences between forks, clones, and branches. When would you use one instead of another?
+    To fork is a term used only within github. It lets a user to clone someone´s repository to your repository.  It is the same 
+    than clone.
+    To clone is to copy a repository either remote or within your computer and it is used within git bash / command line. 
+   Branches are part of a project that at the same time can be cloned, pushed or pulled to a remote or local repository. You   always have to specify the branch you want to clone or pull. 
