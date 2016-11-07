@@ -8,17 +8,16 @@ LESSON 2
 
 1. What happens when you initialize a repository? Why do you need to do it?
 
-ANSW= When I initialize a repository a new file with a .git extension is created. The "git initialize" command is required. The user can not see this file at first instance. For viewing this file the command " ls -a" in the prompt is required in the directory where the repository is.
-The reason I need to create a repository is for tracking the changes of all the files within the repository. The name of the files won´t change but just the history (content of the files) in time. Provided that, I will be able to check the history. 
+    ANSW= When I initialize a repository a new file with a .git extension is created. The "git initialize" command is required. The user can not see this file at first instance. For viewing this file the command " ls -a" in the prompt is required in the directory where the repository is.
+    The reason I need to create a repository is for tracking the changes of all the files within the repository. The name of the files won´t change but just the history (content of the files) in time. Provided that, I will be able to check the history. 
 
 2. How is the staging area different from the working directory and the repository? What value do you think it offers?
 
-ANSW= 
-The repository is where all the files of a project are together with the commmits you may have of your logic changes. The files should have been added before to the staging area for making the commit.
+    ANSW= The repository is where all the files of a project are together with the commmits you may have of your logic changes. The files should have been added before to the staging area for making the commit.
 
-The staging area is the area where the files of a project are added so that a commit can be made before adding it to a repository (.git)
+    The staging area is the area where the files of a project are added so that a commit can be made before adding it to a repository (.git)
 
-The working directory is just the file where all the files of the project are including the repository and individual files with any extension that are part of the project. You can not track the history in the files there by itself. Only in the created repository after sending the files to the staging area, creating a commit and maybe adding them to the repository. 
+    The working directory is just the file where all the files of the project are including the repository and individual files with any extension that are part of the project. You can not track the history in the files there by itself. Only in the created repository after sending the files to the staging area, creating a commit and maybe adding them to the repository. 
 
 
 Solved problems "git commit" execution
@@ -45,9 +44,85 @@ git config --globa user.name "Carlos Aguilera"
 
 2.Git commit show error subl -n -w: subl: command not found error: There was a problem with the editor ‘subl -n -w’. Please supply the message using either -m or -F option
 
-ANSW= git config --global core.editor "'c:/program files/sublime text 2/sublime_text.exe' -w"
+    ANSW= git config --global core.editor "'c:/program files/sublime text 2/sublime_text.exe' -w"
 
-For my computer = git config --globa core.editor "'C:\Program Files\Sublime Text 3\subl.exe' -w"
+    For my computer = git config --globa core.editor "'C:\Program Files\Sublime Text 3\subl.exe' -w"
 
-https://discussions.udacity.com/t/git-commit-show-error-subl-n-w-subl-command-not-found-error-there-was-a-problem-with-the-editor-subl-n-w-please-supply-the-message-using-either-m-or-f-option/21751/5
+    https://discussions.udacity.com/t/git-commit-show-error-subl-n-w-subl-command-not-found-error-there-was-a-problem-with-the-editor-subl-n-w-please-supply-the-message-using-either-m-or-f-option/21751/5
 
+3. How can you use the staging area to make sure you have one commit per logical change?
+
+   ANSW = When I want to send a file to the staging area I do it by using "git add Name_Of_the_File" and previously saving the file once it has been modified or refreshed. 
+
+   I may have modified another file that is part of the project but just moved one line or piece of code to a previous line. In other words, something not meaningful enough or smth that has not a logial change. 
+
+   I can check the working directory changes with "git diff" only to see that but I will just use "git add" in the file I really applied a logial change. Then I can use "git diff --staged" to see if the file which should have a logical change is ready for being commited and double check if that´s the file I really want to commit... comparing that a logical change was made between the file that is already in the repository (commit1) and the one that is in the staging area. 
+
+
+4. What are some situations  branches would be helpful in keeping your history organized? How would branches help?
+
+    ANSW= Branches would be helpful for example when you finish a project with the minimmum necesarry requirements while it does the job.
+
+   The evolving files until you get the final file would be in a "master branch" you can add commits to the master file but for example you maybe want to test a language in the "final commercial commit" and from there create a new branch or maybe in the project of the stethoscope I have what I got on the technical inform but from there add a new "user experience branch" That´s the way branches are helpful in order to keep my history organized and just going to the branches to keep showing improvements without changing the file or branch that does the minimmum required job. 
+
+5. How do the diagrams help you visualize the branch structure?
+
+     ANSW = The diagrams help you to see the big picture of a project.
+
+     You can track commits of your project. There can be new branches that have no relationship or that are not yet connected with the master branch in order to try new features. They can be added and visualized with the command "git branch Branch_name " and tracked with "git log --graph --oneline master added_branch" If you are conscious about that maybe you can put them together in the future once the new branch with the new feature is already tested and works well. 
+
+
+6. What is the result of merging two branches together? Why do we represent it in the diagram the way we do?
+
+   ANSW= The result of merging two branches are:
+   a) The order of the commits of the master branch are according to the date the commit was made, not according to the order it was added. 
+   b) Each commit will have a parent and checking the previous modification will be done using the comand "git show" in order to compare the changes between its parent .
+   c) After that, the commit can be deleted using the command "git branch -D name_Of_theBranch"
+   d) Finally the result is a new master branch that includes the new branch and new features or fixed bugs. It is useful to represent from which point starts the new branch in order to keep the order, logic and track any problem easily.
+
+
+  7. What are the pros and cons of Git’s automatic merging vs. always doing merges manually?
+
+  a) Pros. When both branches have modified files, git won´t let you merge automatically since there are changes you have to track and check. 
+  By checking those changes you can decide whether the new merged branch will keep the changes made in some of the branches or if the changess 
+  will be deprecated or not taken in count. 
+  When git does it automatically sometimes it means that there were no changes in the same files but just that a new line of code or a piece 
+  of code was added. It means that it is more likely that there won´t be conflicts comparing two pieces of code that are there for the same things in some 
+  branches.
+  b) The cons are that it takes time to track where the nchange was made or the conflict. Then, go to talk with the other person in charge of the other branche
+  and then come up with a common piece of code. 
+******************************************
+********END QUESTION/ANSWER SECTION*******
+
+PROBLEM FOR MERGING: 
+Dragon Slayer (master) asteroids $ git merge master coins
+Auto-merging game.js
+CONFLICT (content): Merge conflict in game.js
+Automatic merge failed; fix conflicts and then commit the result.
+Dragon Slayer (master *+|MERGING) asteroids $
+
+
+SOLUTION 
+n the instructors notes after the video:
+Merge conflict
+
+If you get a message like this
+
+Auto-merging game.js
+CONFLICT (content): Merge conflict in game.js
+Automatic merge failed; fix conflicts and then commit the result.
+then your files were not in the same state as Caroline's when you started the merge. To fix this, complete the following steps:
+
+Restore your files to their state before you started the merge by running git merge --abort
+Double check the state of your files. If you run git log while the master branch is checked out, you should see Caroline's "Add color" commit as the second-most-recent, and the most recent should be your commit fixing the bullet bug. If you use git diff to compare your commit to Caroline's, your commit should introduce the line this.delayBeforeBullet = 10; on line 424. The line should be indented to the same level as the line below it using only spaces (no tabs), and the line should have no spaces after it.
+Once your file is in the correct state, create a new commit with your changes.
+Try the merge again.
+
+I opened game.js, found the code this.delayBeforeBullet = 10; and backspaced 3 times so that this.delayBeforeBullet = 10; lined up with the code below it. After committing the change, I ran git merge master coins and received the expected result.
+
+Thank you!
+
+SOURCES USEFUL: 
+https://coderwall.com/p/e8oqzg/git-undo-git-reset
+https://discussions.udacity.com/t/lesson-2-git-merge-master-coins/30512/2
+http://rogerdudler.github.io/git-guide/
